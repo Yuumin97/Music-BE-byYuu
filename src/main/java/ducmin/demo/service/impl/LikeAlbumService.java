@@ -44,7 +44,7 @@ public class LikeAlbumService implements ILikeAlbumService {
     }
 
     @Override
-    public Optional<LikeAlbum> findBySongIdAndUserId(Long song_id, Long user_id) {
-        return likeAlbumRepository.findBySongIdAndUserId(song_id,user_id);
+    public Optional<LikeAlbum> findByAlbumIdAndUserId(Long album_id, Long user_id) {
+        return likeAlbumRepository.findByAlbumIdAndUserId(album_id,user_id);
     }
 }

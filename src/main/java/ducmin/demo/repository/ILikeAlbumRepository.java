@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 @Repository
 public interface ILikeAlbumRepository extends JpaRepository<LikeAlbum,Long> {
-    Optional<LikeAlbum> findBySongIdAndUserId(Long song_id, Long user_id);
+    Optional<LikeAlbum> findByAlbumIdAndUserId(Long album_id, Long user_id);
 }

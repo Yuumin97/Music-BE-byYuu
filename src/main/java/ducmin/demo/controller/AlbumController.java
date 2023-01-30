@@ -71,7 +71,7 @@ public class AlbumController {
         albumDetail.setAlbum(album.get());
         User user = userDetailService.getCurrentUser();
         if (user.getId()!=null){
-            Optional<LikeAlbum> likeAlbum = likeAlbumService.findBySongIdAndUserId(album.get().getId(),user.getId());
+            Optional<LikeAlbum> likeAlbum = likeAlbumService.findByAlbumIdAndUserId(album.get().getId(),user.getId());
             if (!likeAlbum.isPresent()){
                 albumDetail.setCheckLikeAlbum(false);
             }else {
@@ -92,7 +92,7 @@ public class AlbumController {
         if(!album.isPresent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        Optional<LikeAlbum> likeAlbum = likeAlbumService.findBySongIdAndUserId(album.get().getId(),user.getId());
+        Optional<LikeAlbum> likeAlbum = likeAlbumService.findByAlbumIdAndUserId(album.get().getId(),user.getId());
         if(!likeAlbum.isPresent()){
             LikeAlbum likeAlbum1 = new LikeAlbum();
             likeAlbum1.setAlbum(album.get());
